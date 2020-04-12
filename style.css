@@ -1,0 +1,70 @@
+body {
+
+	margin:0;
+	min-width: 300px;
+
+}
+
+* {
+	box-sizing: border-box;
+}
+
+ul {
+
+	margin: 0;
+	padding: 0;
+}
+
+ul li {
+
+	position: relative;
+	background-color: #aaa;
+	list-style-type: none;
+	cursor: pointer;
+	padding: 10px 6px 10px 30px;
+	transition: 0.3s;
+
+	/* making list unselectable */
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+	/* fondo de objetos de lista impares */
+ul li:nth-child(odd){
+	background-color: #888;
+}
+
+	/* fondo al pisar un elemento */
+ul li:hover{
+	background-color: #ddd;
+}
+
+	/* los Tics */
+ul li.checked::before {
+
+	content: '';
+	position: absolute;
+	border-color: white;
+	border-style: solid;
+	border-width: 0 2px 2px 0;
+	top 10px;
+	left: 15px;
+	transform: rotate(45deg);
+	height: 15px;
+	width: 10px;
+}
+
+
+.close {
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 10px 15px 10px 15px;
+}
+
+.close:hover {
+
+	background: #f43c2f;
+}
