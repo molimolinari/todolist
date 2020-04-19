@@ -9,16 +9,58 @@ body {
 	box-sizing: border-box;
 }
 
-ul {
+.the-header {
+	background-color: #578;
+	padding: 30px 42px;
+	color: white;
+	text-align: center;
+}
+.the-header:after{
+	content: "";
+	display: table;
+	clear: both;
+}
 
+#the-input {
+	width: 80%;
+	padding: 10px;
+	float: left;
+	font-size: 15px;
+	margin: 0;
+	border: none;
+	border-radius: 0;
+}
+
+.create-button {
+	padding: 10px;
+	background-color: #557;
+	font-size: 18px;
+	width: 20%;
+	color: #ddd;
+	float: left;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 0;
+	-webkit-transition: 0.4s;
+	-moz-transition: 0.4s;
+	-ms-transition: 0.4s;
+	-o-transition: 0.4s;
+	transition: 0.4s;
+
+}
+
+.create-button:hover {
+	background-color: #668;
+}
+
+ul {
 	margin: 0;
 	padding: 0;
 }
 
 ul li {
-
 	position: relative;
-	background-color: #aaa;
+	background-color: #cdd;
 	list-style-type: none;
 	cursor: pointer;
 	padding: 10px 6px 10px 30px;
@@ -33,12 +75,18 @@ ul li {
 
 	/* fondo de objetos de lista impares */
 ul li:nth-child(odd){
-	background-color: #888;
+	background-color: #abb;
 }
 
 	/* fondo al pisar un elemento */
 ul li:hover{
-	background-color: #ddd;
+	background-color: #dee;
+}
+
+ul li.checked {
+	background: #282828;
+	color: white;
+	text-decoration: line-through;
 }
 
 	/* los Tics */

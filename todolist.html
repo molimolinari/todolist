@@ -1,32 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport"
-		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum>
-	<meta http-equiv="X-UA-Compatible" content"ie=edge">
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="script.js"></script>
+
 </head>
 <body>
 
-<div class="container">
+	<div class="container">
 
-<div id="header" class="the-header">
-		<h1>My Amazing APP</h1>
-	<input type="text" id="the-input" placeholder="what you woant to do...">
-	<span class="create-button">Create Todo</span>
+	<div id="the-header" class="the-header">
+		<h1>Lista de Tareas</h1>
+		<input type="text" id="the-input" placeholder="Agregar una nueva tarea...">
+		<span onclick="createNewElement()" class="create-button">Agregar!</span>
+	</div>
+
+	<ul id="the-ul">
+		<li>Comprar Birras</li>
+		<li>Limpiar el baño</li>
+		<li>Hacer ejercicio</li>
+	</ul>
 </div>
 
-<ul id="the-ul">
-	<li>Buy beers</li>
-	<li>Study hard</li>
-	<li>Get groceries</li>
-
-</ul>
-
-</div>
-
+<script src="script.js"></script>
 </body>
 </html>

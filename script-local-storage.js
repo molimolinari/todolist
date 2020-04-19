@@ -1,19 +1,39 @@
 //creating a close buttons for lists that are not created with the function
 
-var myList = document.getElementsByTagName("li");
-var index;
-for (index = 0; index < myList.length; index++){
-	var aSpanTag = document.createElement("SPAN");
-	var someTxt = document.createTextNode("\u00D7");
-	aSpanTag.className = "close";
-	aSpanTag.appendChild(someTxt);
-	myList[index].appendChild(aSpanTag);
+//trae la lista del HTML: var myList = document.getElementsByTagName("li");
+
+//trae la lista del disco:
+function getTodos() {
+	var myList = localStorage.getItem("todos");
+//		myList = JSON.parse(str);
+		if (!myList) {
+			mylist = [];
+		}
+	return myList;
 }
 
+//función que guarda en disco un nuevo elemento
+function saveTodos(li) {
+//	var str = JSON.stringify(li);
+	localStorage.setItem("todos", li);
+}
+
+var myList = getTodos();
+
+var index;
+
+if (myList){
+	for (index = 0; index < myList.length; index++){
+		var aSpanTag = document.createElement("SPAN");
+		var someTxt = document.createTextNode("\u00D7");
+		aSpanTag.className = "close";
+		aSpanTag.appendChild(someTxt);
+		myList[index].appendChild(aSpanTag);
+	}
+}
 
 // CLOSE BUTTON
 var closeButton = document.getElementsByClassName("close");
-
 
 for(i = 0; i < closeButton.length; i++){
 		closeButton[i].onclick = function(){
@@ -22,9 +42,7 @@ for(i = 0; i < closeButton.length; i++){
 		}
 	}
 
-
 //-----------------------------------------------------------
-
 
 // Creating to-dos function
 function createNewElement(){
@@ -36,8 +54,11 @@ function createNewElement(){
 	if(theInputValue === ''){
 		alert("Che no puede estar vacio esto!")
 	} else {
-		
+
 		document.getElementById("the-ul").appendChild(li);
+		//guardar en el disco la lista con el elemento agregado
+		saveTodos(li.appendChild(textNode));
+		console.log(li.appendChild(textNode));
 	}
 
 	document.getElementById("the-input").value = "";
@@ -47,6 +68,7 @@ function createNewElement(){
 	thePanTag.className = "close";
 	thePanTag.appendChild(txt);
 	li.appendChild(thePanTag);
+//	saveTodos(li); //guardo la lista sin el elemento borrado
 
 
 // removing items when cleck on SPAN (cruz)
