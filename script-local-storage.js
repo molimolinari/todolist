@@ -1,22 +1,27 @@
 //creating a close buttons for lists that are not created with the function
 
-//trae la lista del HTML: var myList = document.getElementsByTagName("li");
+var myList = document.getElementsByTagName("li");
+var index;
+for (index = 0; index < myList.length; index++){
+	var aSpanTag = document.createElement("SPAN");
+	var someTxt = document.createTextNode("\u00D7");
+	aSpanTag.className = "close";
+	aSpanTag.appendChild(someTxt);
+	myList[index].appendChild(aSpanTag);
+}
 
-//trae la lista del disco:
-function getTodos() {
-	var myList = localStorage.getItem("todos");
-//		myList = JSON.parse(str);
-		if (!myList) {
-			mylist = [];
+// CLOSE BUTTON
+var closeButton = document.getElementsByClassName("close");
+
+for(i = 0; i < closeButton.length; i++){
+		closeButton[i].onclick = function(){
+			var theDiv = this.parentElement;
+			theDiv.style.display = "none";
 		}
-	return myList;
-}
+	}
 
-//función que guarda en disco un nuevo elemento
-function saveTodos(li) {
-//	var str = JSON.stringify(li);
-	localStorage.setItem("todos", li);
-}
+
+//------------------------
 
 var myList = getTodos();
 
